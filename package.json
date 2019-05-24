@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "eslint src",
     "dev": "umi dev",
     "build": "umi build",
     "serve": "serve ./dist"
