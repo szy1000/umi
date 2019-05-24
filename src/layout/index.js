@@ -1,5 +1,6 @@
 import { Component } from "react"
 import { Layout, Menu, Icon } from 'antd'
+import logo from '../assets/logo.svg';
 const { Header, Footer, Sider, Content } = Layout;
 import Link from 'umi/link'
 
@@ -11,7 +12,12 @@ class BasicLayout extends Component {
     return (
       <Layout>
         <Sider width={256} style={{ minHeight: '100vh' }}>
-          <div style={{ height: '32px', background: 'rgba(255,255,255,.2)', margin: '16px'}}/>
+          <div style={{ height: '64px', paddingLeft: '24px', background: 'rgba(255,255,255,.2)'}}>
+            <Link to="/">
+              <img src={logo} style={{height: '32px', verticalAlign: 'middle'}} alt=""/>
+              <h1 style={{display: 'inline-block',marginLeft: '15px', lineHeight: '64px', fontSize: '20px', color: 'white'}}>antd_course</h1>
+            </Link>
+          </div>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
             <Menu.Item key="1">
               <Icon type="pie-chart" />
