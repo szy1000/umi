@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Card, Button} from 'antd';
+import {Card, Button, Skeleton} from 'antd';
 
 import {connect} from 'dva'
 
@@ -9,6 +9,7 @@ const mapStateToProps = (state) => {
   const list = state[namespace].list;
   return {
     list,
+    loading: state.loading.effects['index/queryInitCards']
   };
 };
 
@@ -45,6 +46,8 @@ export default class Index extends Component {
   render() {
     return (
       <div>
+        {this.props.loading && <Skeleton/>}
+
         {
           this.props.list.map(card => {
             return (
