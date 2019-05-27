@@ -4,7 +4,7 @@ import {message} from 'antd'
 export default {
   namespace: 'index',
   state: {
-    counter: 10000000,
+    counter: 100,
     list: []
   },
 
@@ -32,7 +32,6 @@ export default {
       const nextCounter = state.counter + 1;
       const newCardWithId = {...newCard, id: nextCounter};
       const nextData = state.list.concat(newCardWithId);
-      console.log(nextCounter)
       return {
         list: nextData,
         counter: nextCounter,
