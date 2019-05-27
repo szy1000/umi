@@ -32,7 +32,7 @@ export default {
         }
       ];
       const {call, put} = sagaEffects;
-      yield call(delay, 3000);
+      yield call(delay, 1500);
       yield put({type: 'initList', payload: listData});
     }
   },
@@ -42,7 +42,16 @@ export default {
       return {
         list
       };
+    },
+    addOne(state, {payload}) {
+      const {list} = state
+      payload.id = list.length + 1
+      list.push(payload)
+      return {
+        list
+      }
     }
+
   }
 
 };

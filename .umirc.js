@@ -6,9 +6,19 @@ export default {
       extends: "eslint-config-umi",
       // useLocale: true, //设置title
       title: 'antd_course',
+      locale: {
+        enable: true,
+        default: 'zh-CN',
+        baseNavigator: true, // 为true时，用navigator.language的值作为默认语言
+        antd: true // 是否启用antd的<LocaleProvider />
+      }
       // 这里暂时还没有添加配置，该插件还不会有作用，我们会在后面的课程按照需求打开相应的配置
     }],
   ],
+  // 加入 theme 定义
+  theme: {
+    // "@primary-color": "#30b767",
+  },
   // proxy: {
   //   '/dev': {
   //     target: 'https://08ad1pao69.execute-api.us-east-1.amazonaws.com',

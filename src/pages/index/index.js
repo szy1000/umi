@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {Card, Button, Skeleton} from 'antd';
-
 import {connect} from 'dva'
+import {FormattedMessage} from 'umi/locale';
+
+import style from './style.less'
 
 const namespace = 'index'
 
@@ -46,6 +48,9 @@ export default class Index extends Component {
   render() {
     return (
       <div>
+        <div className={style.box}>
+          <p><FormattedMessage id="hello"/><code>Less</code></p>
+        </div>
         {this.props.loading && <Skeleton/>}
 
         {
